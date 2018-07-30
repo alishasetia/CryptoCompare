@@ -1,0 +1,96 @@
+html
+{
+	height: 100%;
+}
+body {
+	font-size:12px;
+	margin:0 auto;
+	padding:0px;
+	background:#ccc;
+}
+
+.header {
+	font-size:4em;
+	font-weight:bold;
+	text-align:center;
+	background:navy;
+	color:white;
+	padding: 20px;
+}
+
+.content {
+	text-align: center;
+	padding-top: 37%;
+	
+}
+
+.form-control {
+	width:40%;	
+	height: 4.5em;
+	clear:both;
+	display: block;
+	margin:0 auto;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background:transparent;
+	outline:none;
+	font-size: 2em;
+
+
+}
+
+.login {
+	width:6em;
+	height:2em;
+	margin-top:2em;
+	font-size: 3em;
+	background:navy;
+	color:white;
+	font-weight: bold;
+	border:none;
+
+}
+.login:active {
+	background: lightblue;
+}
+
+.footer {
+	padding-top:32%;
+}
+
+.left-nav {
+	position:fixed;
+	border-right:solid navy;
+	background-color: lightblue;
+	height:100%;
+	
+}
+.left-nav a {
+	
+	color:white;
+	font-size:3em;
+	padding:10px 40px 20px 20px;
+	text-decoration: none;
+	display: block;
+	text-align:center;
+	border-bottom: solid navy;
+}
+.nav-items {
+	color:white;
+	font-size: 3em;
+	border:solid navy;
+}
+
+.slider {
+	margin-top: 5%;
+	height:35%;
+	width: 70%;
+	float:right;
+
+}
+
+img {
+	height:35%;
+	width:70%;
+}

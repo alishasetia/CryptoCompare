@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="header">Welcome</div>
+	<div class="content">		
+			<input id="username" class="form-control" type="text" placeholder="User Name"/>
+			<input id="passwrd" class="form-control" type="password" placeholder="Password" />
+			<button class="login" id="login" onclick="authenticate()">Login</button>	
+	</div>
+	<div class="footer">&reg; 2018</div>
+<script>
+	if (!localStorage.userInfo) {
+		var userinfo={username:"alisha",password:"tester123"};
+		localStorage.setItem('userInfo',JSON.stringify(userinfo));
+	}
+	function authenticate() {
+		if ((document.getElementById('username').value==JSON.parse(localStorage.getItem('userInfo')).username) 
+			&& (document.getElementById('passwrd').value==JSON.parse(localStorage.getItem('userInfo')).password)) {
+			alert("You have successfully login!!");
+			location.href="home.html";
+		} else {
+			alert("Please try again!!!");
+		}
+
+	}
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

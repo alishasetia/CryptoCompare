@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coin List</title>
+</head>
+<body >
+
+<table id="data" border="1">
+	<tr>
+		<th>Id</th>
+		<th>Url</th>
+		<th>ImageUrl</th>
+		<th>Name</th>
+		<th>Coin Name</th>
+		<th>Full Name</th>
+		<th>Algorithm</th>
+		<th>ProofType</th>
+		<th>SortOrder</th>
+</tr>
+</table>
+<script>
+
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     var data = JSON.parse(this.responseText).Data;
+     renderData(data);
+    }
+  };
+
+	xhr.open("GET","https://www.cryptocompare.com/api/data/coinlist/");
+	xhr.send();
+ function renderData(data) {
+ 	var table = document.getElementById('data');
+ 	var html = "";
+ 	for(var item in data)
+ 	{
+ 		html+= "<tr>";
+ 		html+= "<td> "+data[item].Id+"</td>";
+ 		html+= "<td> "+data[item].Url+"</td>";
+ 		html+= "<td> "+data[item].ImageUrl+"</td>";
+ 		html+= "<td> "+data[item].Name+"</td>";
+ 		html+= "<td> "+data[item].CoinName+"</td>";
+ 		html+= "<td> "+data[item].FullName+"</td>";
+ 		html+= "<td> "+data[item].Algorithm+"</td>";
+ 		html+= "<td> "+data[item].ProofType+"</td>";
+ 		html+= "<td> "+data[item].SortOrder+"</td>"; 
+ 		html+= "</tr>";
+ 			
+ 	}
+ 	table.innerHTML+=html;
+ }
+</script>
+</body>
+</html>
